@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/mia/Desktop/assistant
+plugins: langsmith-0.7.32, anyio-4.13.0
+collected 4 items
+
+tests/test_retrieval_latency.py .Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading from: /Users/mia/Desktop/assistant/notes_index.faiss
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 21499.83it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-base-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+..
+=== Retrieval Benchmark Summary ===
+Samples: 30
+Min:     9.03 ms
+Median:  21.75 ms
+Mean:    21.96 ms
+P95:     39.38 ms
+Max:     41.57 ms
+.
+
+=============================== warnings summary ===============================
+tests/test_retrieval_latency.py::test_embedding_model_matches_faiss_index
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_retrieval_latency.py::test_embedding_model_matches_faiss_index
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_retrieval_latency.py::test_embedding_model_matches_faiss_index
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 3 warnings in 5.30s =========================
